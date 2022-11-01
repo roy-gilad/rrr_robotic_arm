@@ -571,9 +571,7 @@ class linear_move:
             print (f"{math.degrees(q1)}, {math.degrees(q2)}, {math.degrees(q3)}, {math.degrees(q4)}, {math.degrees(q5)}, {math.degrees(q6)}")
             X, Y, Z = forward_kin(q1, q2, q3, q4, q5, q6)
             n_update_plot(X, Y, Z, self.fig, self.ax)
-            self.ax1_f.plot(X,Y)
-            self.ax2_f.plot(X, Z)
-            self.ax3_f.plot(Y, Z)
+
 
         self.px=self.px_new
         self.py=self.py_new
