@@ -5,7 +5,7 @@ import numpy as np
 # y=1−x2 , or c⃗ (t)=(t,1−t2)
 
 def create_parbolic_vector(start_p,end_p,samples):
-    # A is start point, B end point, C mid point, D - maximum vertex to C
+    # A is start point, B end point, C mid point, D - maximum vertex to C d
 
     A=np.array([start_p]).T
     B=np.array([end_p]).T
