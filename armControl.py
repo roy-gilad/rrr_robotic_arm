@@ -562,7 +562,10 @@ class linear_move:
             n_update_plot(X, Y, Z, self.fig, self.ax)
     def parbolic_move(self):
         roll=pitch=yaw=1
-        prab_num_points=30
+        prab_num_points=60
+        q1_p = []
+        q2_p = []
+        q3_p = []
         M=create_parbolic_vector([self.px, self.py, self.pz], [self.px_new, self.py_new, self.pz_new],1,prab_num_points)
 
         for i in range(prab_num_points):
@@ -571,7 +574,20 @@ class linear_move:
             print (f"{math.degrees(q1)}, {math.degrees(q2)}, {math.degrees(q3)}, {math.degrees(q4)}, {math.degrees(q5)}, {math.degrees(q6)}")
             X, Y, Z = forward_kin(q1, q2, q3, q4, q5, q6)
             n_update_plot(X, Y, Z, self.fig, self.ax)
+            q1_p.append(math.degrees(q1))
+            q2_p.append(math.degrees(q2))
+            q3_p.append(math.degrees(q3))
 
+        pp = np.linspace(0, 180, len(q1_p))
+        fig, axs = plt.subplots(3)
+        axs[0].plot( pp,q1_p,)
+        axs[0].set_title('q1_p')
+        axs[1].plot(pp, q2_p)
+        axs[1].set_title('q2_p')
+        axs[2].plot(pp, q3_p)
+        axs[2].set_title('q3_p')
+
+        plt.show()
 
         self.px=self.px_new
         self.py=self.py_new
@@ -580,8 +596,8 @@ class linear_move:
 
     def InitArmPosition(self):
         # initialized  q location
-        self.px=1
-        self.py = 1
+        self.px=-1
+        self.py = -1
         self.pz = 1
         roll=1
         pitch=1

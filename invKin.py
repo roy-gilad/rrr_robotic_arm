@@ -268,11 +268,8 @@ def create_parbolic_vector(start_p,end_p,high,samples):
     #
     # plt.show()
     return X
-def create_flat_plot():
-    fig, (ax1, ax2 ,ax3) = plt.subplots(3)
-    return ax1,ax2,ax3
+
 def create_plot():
-  fig, ax = plt.subplots(2, 2)
   fig = plt.figure()
   ax = fig.add_subplot(111,projection = '3d')
   ax.set_xlabel('x axis')
@@ -298,7 +295,7 @@ def n_update_plot(X,Y,Z,fig,ax):
     ax.set_zlabel('z axis')
     ax.scatter(X, Y, Z)
     # ax.plot(X, Y, Z)
-    plt.pause(0.5)
+    plt.pause(0.1)
 
 def update_plot(X,Y,Z,fig,ax):
   X = np.reshape(X,(1,7))
