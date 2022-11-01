@@ -295,7 +295,7 @@ def n_update_plot(X,Y,Z,fig,ax):
     ax.set_zlabel('z axis')
     ax.scatter(X, Y, Z)
     # ax.plot(X, Y, Z)
-    plt.pause(0.1)
+    plt.pause(0.01)
 
 def update_plot(X,Y,Z,fig,ax):
   X = np.reshape(X,(1,7))

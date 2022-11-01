@@ -580,11 +580,14 @@ class linear_move:
 
         pp = np.linspace(0, 180, len(q1_p))
         fig, axs = plt.subplots(3)
-        axs[0].plot( pp,q1_p,)
+        axs[0].grid()
+        axs[1].grid()
+        axs[2].grid()
+        axs[0].scatter( pp,q1_p,)
         axs[0].set_title('q1_p')
-        axs[1].plot(pp, q2_p)
+        axs[1].scatter(pp, q2_p)
         axs[1].set_title('q2_p')
-        axs[2].plot(pp, q3_p)
+        axs[2].scatter(pp, q3_p)
         axs[2].set_title('q3_p')
 
         plt.show()

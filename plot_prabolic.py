@@ -27,12 +27,23 @@ def create_parbolic_vector(start_p,end_p,high,samples):
     print(X)
     fig=plt.figure()
     ax = fig.add_subplot(111, projection='3d')
+    ax.set_xlabel('x axis')
+    ax.set_ylabel('y axis')
+    ax.set_zlabel('z axis')
     ax.scatter(X[:,0],X[:,1],X[:,2])
     ax.scatter(A[0],A[1],A[2])
     ax.scatter(B[0], B[1], B[2])
+
+    fig=plt.figure()
+    plt.scatter(X[:,0],t)
+    fig = plt.figure()
+    plt.scatter(X[:, 1], t)
+    fig = plt.figure()
+    plt.scatter(X[:, 2], t)
+    plt.show()
 
     plt.show()
 
 #def main():
 # create_parbolic_vector([-0.75,3.23,2.77],[1.57,0.94,0.74],100)
-create_parbolic_vector([1,1,1],[2,1,1],0.2,100)
+create_parbolic_vector([1,1,1],[2,2,2],4,50)
