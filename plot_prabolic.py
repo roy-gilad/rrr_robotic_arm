@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import itertools
 
 #refference  https://math.stackexchange.com/questions/4177154/find-equation-for-a-parabolic-line-that-goes-through-two-points-in-3d-space
 # y=1−x2 , or c⃗ (t)=(t,1−t2)
@@ -12,8 +13,12 @@ def create_parbolic_vector(start_p,end_p,high,samples):
     d=high
     C = (A + B)/2
     D = C + np.array([[0,0,d]]).T
-    t = np.linspace(-1,1 , samples)
-
+    t1 = np.linspace(-1,-0.5 , 10)
+    t2 = np.linspace(-0.5, 0.5, 10)
+    t3 = np.linspace(0.5, 1, 10)
+    t= list(itertools.chain(t1,t2,t3))
+    t=np.array(t)
+    print(len(t))
     CC = np.tile(C, (1,len(t)))
     tt = np.tile(t,(len(t),1))
     qq = 1-t**2
@@ -41,6 +46,7 @@ def create_parbolic_vector(start_p,end_p,high,samples):
     fig = plt.figure()
     plt.scatter(X[:, 2], t)
     plt.show()
+    return  X[:,0]
 
     plt.show()
 
